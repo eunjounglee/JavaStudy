@@ -3,7 +3,7 @@ package ch12;
 public class IndexOf2 {
 	public static void main(String[] args) {
 
-		String str = "Java 개발자 양성을 통한 취업연계과정!!";
+		String str = "Java 개발자 양성을 통한 취업연계과정!! ";
 		
 		int sidx = 0;
 		int eidx = 0;

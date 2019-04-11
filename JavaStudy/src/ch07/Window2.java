@@ -8,7 +8,7 @@ import java.util.Calendar;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-public class Window3 {
+public class Window2 {
 	public static void main(String[] args) {
 
 		Calendar c = Calendar.getInstance();
