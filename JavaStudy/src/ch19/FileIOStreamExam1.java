@@ -22,6 +22,7 @@ public class FileIOStreamExam1 {
 					new BufferedOutputStream(fos);
 			int data = 0;
 			
+			
 			while(true) {
 				data = bis.read();
 				if(data == -1) break;
