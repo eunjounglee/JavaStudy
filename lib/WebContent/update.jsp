@@ -8,26 +8,30 @@
     pageEncoding="utf-8"%>
 <%
 	String id = request.getParameter("id");
-	String pw = request.getParameter("pw");
-	
 	try {
 		DBManager db = DBManager.getInstance();
-		Connection con = db.open();
-		String sql = "select id from member where id=? and pw=?";
+		Connection con = db.open();                 //  asc
+		String sql = "select * from article where id = ?";
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setString(1, id);
-		stmt.setString(2, pw);
+		
 		ResultSet rs = stmt.executeQuery();
-		boolean isOk = false;
 		if(rs.next()) {
-			isOk = true;
+			String num = rs.getString("id");
+			String title = rs.getString("title");
+			String content = rs.getString("content");
+			String hit = rs.getString("hit");
+			String id2 = rs.getString("id2");
+%>
+	<form method="post" action="update_proc.jsp">
+		제목 : <input type="text" name="title" value="<%=title%>"><br>
+		내용 : <textarea name="content"><%=content%></textarea><br>
+		<input type="hidden" name="id" value="<%=id%>">
+		<input type="submit" value="수정완료">
+	</form>
+<%		
 		}
-		if(isOk) {
-			out.println("로그인되었습니다.");
-			session.setAttribute("id", id);
-		} else {
-			out.println("다시 로그인해주세요.");
-		}
+		
 	} catch (ClassNotFoundException e) {
 		e.printStackTrace();
 	} catch (SQLException e) {
