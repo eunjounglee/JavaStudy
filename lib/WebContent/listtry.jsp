@@ -110,13 +110,11 @@
 
 
 <footer>
-
 		<div class="footer">
 			<a href="write.jsp"
 				class="button"><button type="button" class="btn">새 게시물 작성</button></a>
 		</div>
 	</footer>
-	
 <html>
 
 
